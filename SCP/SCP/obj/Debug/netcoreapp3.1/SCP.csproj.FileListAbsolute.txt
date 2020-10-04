@@ -2,7 +2,6 @@ C:\Users\Doha\source\Central Procurement\SCP\SCP\bin\Debug\netcoreapp3.1\appsett
 C:\Users\Doha\source\Central Procurement\SCP\SCP\bin\Debug\netcoreapp3.1\appsettings.json
 C:\Users\Doha\source\Central Procurement\SCP\SCP\bin\Debug\netcoreapp3.1\Properties\launchSettings.json
 C:\Users\Doha\source\Central Procurement\SCP\SCP\bin\Debug\netcoreapp3.1\SCP.exe
-C:\Users\Doha\source\Central Procurement\SCP\SCP\obj\Debug\netcoreapp3.1\SCP.csprojAssemblyReference.cache
 C:\Users\Doha\source\Central Procurement\SCP\SCP\obj\Debug\netcoreapp3.1\SCP.AssemblyInfoInputs.cache
 C:\Users\Doha\source\Central Procurement\SCP\SCP\obj\Debug\netcoreapp3.1\SCP.AssemblyInfo.cs
 C:\Users\Doha\source\Central Procurement\SCP\SCP\obj\Debug\netcoreapp3.1\SCP.RazorTargetAssemblyInfo.cache
@@ -54,8 +53,10 @@ C:\Users\Doha\source\Central Procurement\SCP\SCP\bin\Debug\netcoreapp3.1\SCP.run
 C:\Users\Doha\source\Central Procurement\SCP\SCP\bin\Debug\netcoreapp3.1\SCP.runtimeconfig.dev.json
 C:\Users\Doha\source\Central Procurement\SCP\SCP\bin\Debug\netcoreapp3.1\SCP.dll
 C:\Users\Doha\source\Central Procurement\SCP\SCP\bin\Debug\netcoreapp3.1\SCP.pdb
-C:\Users\Doha\source\Central Procurement\SCP\SCP\obj\Debug\netcoreapp3.1\SCP.csproj.CoreCompileInputs.cache
-C:\Users\Doha\source\Central Procurement\SCP\SCP\obj\Debug\netcoreapp3.1\SCP.MvcApplicationPartsAssemblyInfo.cache
 C:\Users\Doha\source\Central Procurement\SCP\SCP\obj\Debug\netcoreapp3.1\SCP.dll
 C:\Users\Doha\source\Central Procurement\SCP\SCP\obj\Debug\netcoreapp3.1\SCP.pdb
 C:\Users\Doha\source\Central Procurement\SCP\SCP\obj\Debug\netcoreapp3.1\SCP.genruntimeconfig.cache
+C:\Users\Doha\source\Central Procurement\SCP\SCP\bin\Debug\netcoreapp3.1\Microsoft.AspNetCore.Authentication.JwtBearer.dll
+C:\Users\Doha\source\Central Procurement\SCP\SCP\obj\Debug\netcoreapp3.1\SCP.csproj.CoreCompileInputs.cache
+C:\Users\Doha\source\Central Procurement\SCP\SCP\obj\Debug\netcoreapp3.1\SCP.MvcApplicationPartsAssemblyInfo.cache
+C:\Users\Doha\source\Central Procurement\SCP\SCP\obj\Debug\netcoreapp3.1\SCP.csprojAssemblyReference.cache

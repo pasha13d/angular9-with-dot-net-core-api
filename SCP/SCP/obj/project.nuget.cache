@@ -1,9 +1,10 @@
 {
   "version": 2,
-  "dgSpecHash": "WDXQcXsYSuR1UtlUY0zdI9p57T9bhnxEqQruJ78avcasKI2uq4MqvBafsQPWxlW8eZPExdAK/em1B3kozOmo5Q==",
+  "dgSpecHash": "IonrjmRictm6tboexho5hg5DDgeQnuGnhm5FOa95Tko7m/xbcHQfah48RGHKvO9gxNZgDPiZUsWU0Qc0wXdOUA==",
   "success": true,
   "projectFilePath": "C:\\Users\\Doha\\source\\Central Procurement\\SCP\\SCP\\SCP.csproj",
   "expectedPackageFiles": [
+    "C:\\Users\\Doha\\.nuget\\packages\\microsoft.aspnetcore.authentication.jwtbearer\\3.1.8\\microsoft.aspnetcore.authentication.jwtbearer.3.1.8.nupkg.sha512",
     "C:\\Users\\Doha\\.nuget\\packages\\microsoft.aspnetcore.cors\\2.2.0\\microsoft.aspnetcore.cors.2.2.0.nupkg.sha512",
     "C:\\Users\\Doha\\.nuget\\packages\\microsoft.aspnetcore.http.abstractions\\2.2.0\\microsoft.aspnetcore.http.abstractions.2.2.0.nupkg.sha512",
     "C:\\Users\\Doha\\.nuget\\packages\\microsoft.aspnetcore.http.extensions\\2.2.0\\microsoft.aspnetcore.http.extensions.2.2.0.nupkg.sha512",
