@@ -15,5 +15,6 @@ namespace SCP.Context
         }
 
         public DbSet<Company> Company { get; set; }
+        public DbSet<Supplier> Supplier { get; set; }
     }
 }
