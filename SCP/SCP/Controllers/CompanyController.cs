@@ -6,6 +6,7 @@ using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using SCP.Context;
 using SCP.Model;
+using SCP.Model.Setting;
 
 namespace SCP.Controllers
 {

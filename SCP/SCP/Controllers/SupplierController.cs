@@ -39,13 +39,63 @@ namespace SCP.Controllers
             return supplierDetails;
         }
 
-        [Route("PostSupplierDetail")]
+        //[Route("PostSupplierDetail")]
         [HttpPost]
-        public async Task<ActionResult<Supplier>> PostSupplierDetail(Supplier Supplier)
+        public async Task<ActionResult<Supplier>> PostSupplier(Supplier Supplier)
         {
             _context.Supplier.Add(Supplier);
             await _context.SaveChangesAsync();
             return Ok(Supplier);
+        }
+
+        //[Route("PutZipper")]
+        [HttpPut("{id}")]
+        public async Task<IActionResult> PutSupplier(int Id, Supplier Supplier)
+        {
+            if (Id != Supplier.Id)
+            {
+                return BadRequest();
+            }
+
+            _context.Entry(Supplier).State = EntityState.Modified;
+
+            try
+            {
+                await _context.SaveChangesAsync();
+            }
+            catch (DbUpdateConcurrencyException)
+            {
+                if (!SupplierDetailExists(Id))
+                {
+                    return NotFound();
+                }
+                else
+                {
+                    throw;
+                }
+            }
+
+            return NoContent();
+        }
+
+        [HttpDelete("{id}")]
+        public async Task<ActionResult<Supplier>> DeleteSupplier(int Id)
+        {
+            var supplierDetail = await _context.Supplier.FindAsync(Id);
+            if (supplierDetail == null)
+            {
+                return NotFound();
+            }
+
+            _context.Supplier.Remove(supplierDetail);
+            await _context.SaveChangesAsync();
+
+            return supplierDetail;
+        }
+
+        private bool SupplierDetailExists(int Id)
+        {
+            return _context.Supplier.Any(e => e.Id == Id);
         }
 
     }
