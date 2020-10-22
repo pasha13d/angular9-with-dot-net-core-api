@@ -9,8 +9,8 @@ using SCP.Context;
 namespace SCP.Migrations
 {
     [DbContext(typeof(DatabaseContext))]
-    [Migration("20201019151757_scp")]
-    partial class scp
+    [Migration("20201015103105_Tafetta")]
+    partial class Tafetta
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {

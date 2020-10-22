@@ -23,17 +23,16 @@ namespace SCP.ViewModel
         public string BDRepresentativeContact { get; set; }
         public string SupplierType { get; set; }
         public string Remarks { get; set; }
-        public string COMMENTS1 { get; set; }
-        public string RemarksGSM { get; set; }
+        public int ExpressId { get; set; }
 
-        public List<ExpressViewDetails> ExpressList { get; set; }
+        public virtual List<ExpressViewDetails> ExpressList { get; set; }
     }
     public class ExpressViewDetails
     {
-        public int ExpressId { get; set; }
         public string FOBSHANGHAI1 { get; set; }
         public string CNFCTG1 { get; set; }
+        public string RemarksGSM { get; set; }
         public string ExFty { get; set; }
-        
+        public string COMMENTS1 { get; set; }
     }
 }

@@ -2,7 +2,7 @@
 
 namespace SCP.Migrations
 {
-    public partial class scp : Migration
+    public partial class Tafetta : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {

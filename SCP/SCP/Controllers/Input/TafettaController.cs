@@ -93,13 +93,13 @@ namespace SCP.Controllers.Input
         }
 
         [HttpPost]
-        public async Task<ActionResult<TafettaExpressViewModel>> PostTafetta(List<TafettaExpressViewModel> data)
+        public async Task<ActionResult<Tafetta>> PostTafetta(List<TafettaExpressViewModel> TafettaExpressVM)
         {
 
             //_context.Tafetta.Add(TafettaExpressVM);
             //await _context.SaveChangesAsync();
             //return Ok(TafettaExpressVM);
-            return data.FirstOrDefault();
+            return Ok();
         }
 
 
