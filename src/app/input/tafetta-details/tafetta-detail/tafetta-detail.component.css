@@ -1,0 +1,104 @@
+ .form-center{
+    text-align: center;
+    padding: 10px;
+}
+ 
+.example-card {
+    margin: 0 auto;
+    width: auto;
+    text-align: center;
+}
+
+input::-webkit-input-placeholder {
+    font-size: 14px;
+    line-height: 4;
+    color: #a7a7a7;
+}
+
+.divLayout {
+    display: flex;
+    padding-top: 12px;
+    text-align: left;
+}
+.labelLayout {
+    padding-top: 6px; 
+    padding-left: 12px; 
+    text-align: right;
+}
+
+.expressLayout {
+    text-align: left;
+    display: block;
+}
+.mat-card {
+    padding: 0px;
+}
+
+/* dropdown left align */
+.ng-dropdown-panel .ng-dropdown-panel-items .ng-option {
+    display: flex;
+}
+
+.form-control-lg {
+    font-size: 1rem;
+}
+
+.table td, .table th {
+    vertical-align: middle;
+    padding: .25rem;
+    text-align: left;
+}
+.tbdy {
+    height: 15px;
+}
+
+.btn {
+    padding: -0.625rem, .75rem;
+    line-height: 1;
+}
+
+
+
+/* MAT TABLE */
+
+.app-table-wrapper {
+  position: relative;
+  background-color: #fbf9f9;
+  min-width: 200px;
+  overflow: auto;
+  padding: 0;
+}
+.mat-header-cell {
+  background-color: #3c8dbc;
+  color: white;
+  font-size: medium;
+  padding-left: 10px;
+  width: auto;
+  overflow: hidden;
+  display: table-cell;
+  line-break: unset;
+  white-space: nowrap;
+  vertical-align: middle;
+  word-wrap: initial;
+}
+.mat-row:hover {
+  background-color: #efefef;
+}
+.mat-cell {
+    text-align: left;
+    padding-left: 10px;
+    border-bottom: 1px solid #00c0ef;
+    border-top: 1px solid #00c0ef;
+    border-left:  1px solid #00c0ef;
+    border-right:  1px solid #00c0ef;
+ }
+
+ ::ng-deep .mat-sort-header-container:not(.mat-sort-header-sorted) .mat-sort-header-arrow {
+  opacity: 0.54 !important;
+  transform: translateY(0px) !important;
+  color: white;
+} 
+
+.mat-paginator{
+  min-width: 200px;
+}

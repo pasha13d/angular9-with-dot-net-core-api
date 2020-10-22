@@ -1,0 +1,395 @@
+<form class="form-inline" #form="ngForm" autocomplete="off" class="form-center"> 
+    <!-- (submit)="onSubmit(form)" -->
+    <mat-card class="example-card" style="margin-left: 0px;border: 1px solid #00c0ef !important">
+        <mat-card-header style="background-color: #00c0ef;">
+            <mat-card-title>Tafetta - Entry Form</mat-card-title>
+        </mat-card-header>
+        <mat-card-content style="padding-top: 0px;">
+            <div class="form-group" style="display: flex;">
+               <div class="col-md-3" style="padding: 20px;border-radius: 2px;margin-bottom: 10px; box-shadow: 0px 0px 5px #ddd;">
+                    <div class="row">
+                        <div class="input-group divLayout">
+                            <label class="col-md-4 labelLayout">Buyer Name</label>
+                            <div class="col-md-8">
+                                <ng-select [items]="buyerList" 
+                                    name="BuyerId"  
+                                    #BuyerId="ngModel"
+                                    bindLabel="BuyerName" 
+                                    bindValue="Id" 
+                                    placeholder="Select Buyer"
+                                    [(ngModel)]="service.tafettaFormData.BuyerId">
+                                </ng-select>
+                            </div>
+                        </div>
+                            <!-- <mat-form-field class="col-md-12">
+                                <mat-label>Buyer Name</mat-label>
+                                <mat-select name="BuyerId"  #BuyerId="ngModel" [(ngModel)]="service.tafettaFormData.BuyerId">
+                                    <mat-option>Select Buyer</mat-option>
+                                    <mat-option  [value]="buyer.Id" *ngFor="let buyer of buyerList">{{ buyer.BuyerName }}</mat-option>
+                                </mat-select>
+                            </mat-form-field> -->
+        
+                        <div class="input-group divLayout">
+                            <label class="col-md-4 labelLayout">Fabric Type</label>
+                            <div class="col-md-8">
+                                <ng-select [items]="fabricList" 
+                                    name="FabricId"  
+                                    #FabricId="ngModel"
+                                    bindLabel="FabricType" 
+                                    bindValue="Id" 
+                                    placeholder="Select Fabric Type"
+                                    [(ngModel)]="service.tafettaFormData.FabricId">
+                                </ng-select>
+                            </div>
+                        </div>
+        
+                        <div class="input-group divLayout">
+                            <label class="col-md-4 labelLayout">Color</label>
+                            <div class="col-md-8">
+                                <ng-select [items]="colorList" 
+                                    name="ColorId"  
+                                    #ColorId="ngModel"
+                                    bindLabel="ColorName" 
+                                    bindValue="Id" 
+                                    placeholder="Select Color"
+                                    [(ngModel)]="service.tafettaFormData.ColorId">
+                                </ng-select>
+                            </div>
+                        </div>
+
+                        <div class="input-group divLayout">
+                            <label class="col-md-4 labelLayout">Finish Type</label>
+                            <div class="col-md-8">
+                                <input name="FinishType" class="form-control form-control-lg" style="height: 33px;"
+                                #FinishType="ngModel" [(ngModel)]="service.tafettaFormData.FinishType" required placeholder="Enter Finis Type">
+                            </div>
+                        </div>
+
+                        <div class="input-group divLayout">
+                            <label class="col-md-4 labelLayout">Cuttable Width</label>
+                            <div class="col-md-8">
+                                <ng-select [items]="cuttableList" 
+                                    name="CuttableId"  
+                                    #CuttableId="ngModel"
+                                    bindLabel="CuttableWidth" 
+                                    bindValue="Id" 
+                                    placeholder="Select Cuttable Width"
+                                    [(ngModel)]="service.tafettaFormData.CuttableId">
+                                </ng-select>
+                            </div>
+                        </div>
+
+                        <div class="input-group divLayout">
+                            <label class="col-md-4 labelLayout">GSM</label>
+                            <div class="col-md-8">
+                                <ng-select [items]="gsmList" 
+                                    name="GSMId"  
+                                    #GSMId="ngModel"
+                                    bindLabel="GSMValue" 
+                                    bindValue="Id" 
+                                    placeholder="Select GSM"
+                                    [(ngModel)]="service.tafettaFormData.GSMId">
+                                </ng-select>
+                            </div>
+                        </div>
+
+                        <div class="input-group divLayout">
+                            <label class="col-md-4 labelLayout">Current Price</label>
+                            <div class="col-md-8">
+                                <input name="CurrentPrice" class="form-control form-control-lg" style="height: 33px;"
+                                #CurrentPrice="ngModel" [(ngModel)]="service.tafettaFormData.CurrentPrice" required placeholder="Enter Current Price">
+                            </div>
+                        </div>
+
+                        <div class="input-group divLayout">
+                            <label class="col-md-4 labelLayout">Term of Price</label>
+                            <div class="col-md-8">
+                                <input name="TermOfPrice" class="form-control form-control-lg" style="height: 33px;"
+                                #TermOfPrice="ngModel" [(ngModel)]="service.tafettaFormData.TermOfPrice" required placeholder="Enter Term of Price">
+                            </div>
+                        </div>
+
+                        <div class="input-group divLayout">
+                            <label class="col-md-4 labelLayout">Current Supplier</label>
+                            <div class="col-md-8">
+                                <ng-select [items]="supplierList" 
+                                    name="SupplierId"  
+                                    #SupplierId="ngModel"
+                                    bindLabel="SupplierName" 
+                                    bindValue="Id" 
+                                    placeholder="Select Supplier Name"
+                                    [(ngModel)]="service.tafettaFormData.SupplierId">
+                                </ng-select>
+                            </div>
+                        </div>
+
+                        <div class="input-group divLayout">
+                            <label class="col-md-4 labelLayout">Supplier Origin</label>
+                            <div class="col-md-8">
+                                <ng-select [items]="supplierList" 
+                                    name="SupplierOriginId"  
+                                    #SupplierOriginId="ngModel"
+                                    bindLabel="Origin" 
+                                    bindValue="Id" 
+                                    placeholder="Select Origin"
+                                    [(ngModel)]="service.tafettaFormData.SupplierOriginId">
+                                </ng-select>
+                            </div>
+                        </div>
+    
+                        <div class="input-group divLayout">
+                            <label class="col-md-4 labelLayout">Consume in yds</label>
+                            <div class="col-md-8">
+                                <input name="YearlyConsumeInYds" class="form-control form-control-lg" style="height: 33px;"
+                                #YearlyConsumeInYds="ngModel" [(ngModel)]="service.tafettaFormData.YearlyConsumeInYds" required placeholder="Enter Yearly Consume in yds">
+                            </div>
+                        </div>
+    
+                        <div class="input-group divLayout">
+                            <label class="col-md-4 labelLayout">Price in Average</label>
+                            <div class="col-md-8">
+                                <input name="PriceInAverage" class="form-control form-control-lg" style="height: 33px;"
+                                #PriceInAverage="ngModel" [(ngModel)]="service.tafettaFormData.PriceInAverage" required placeholder="Enter Price in Average">
+                            </div>
+                        </div>
+
+                        <div class="input-group divLayout">
+                            <label class="col-md-4 labelLayout">Contact</label>
+                            <div class="col-md-8">
+                                <input name="BDRepresentativeContact" class="form-control form-control-lg" style="height: 33px;"
+                                #BDRepresentativeContact="ngModel" [(ngModel)]="service.tafettaFormData.BDRepresentativeContact" required placeholder="Enter BD Representative Contact">
+                            </div>
+                        </div>
+    
+                        <div class="input-group divLayout">
+                            <label class="col-md-4 labelLayout">Supplier Type</label>
+                            <div class="col-md-8">
+                                <input name="SupplierType" class="form-control form-control-lg" style="height: 33px;"
+                                #SupplierType="ngModel" [(ngModel)]="service.tafettaFormData.SupplierType" required placeholder="Enter Supplier Type">
+                            </div>
+                        </div>
+    
+                        <div class="input-group divLayout">
+                            <label class="col-md-4 labelLayout">Remarks</label>
+                            <div class="col-md-8">
+                                <input name="Remarks" class="form-control form-control-lg" style="height: 33px;"
+                                #Remarks="ngModel" [(ngModel)]="service.tafettaFormData.Remarks" required placeholder="Enter Remarks">
+                            </div>
+                        </div>
+
+                        <div class="input-group divLayout">
+                            <label class="col-md-4 labelLayout">Remarks (GSM)</label>
+                            <div class="col-md-8">
+                                <input name="RemarksGSM" class="form-control form-control-lg" style="height: 33px;"
+                                #RemarksGSM="ngModel" [(ngModel)]="service.tafettaFormData.RemarksGSM" required placeholder="Enter Remarks (GSM)">
+                            </div>
+                        </div>
+
+                        <div class="input-group divLayout">
+                            <label class="col-md-4 labelLayout">Comments</label>
+                            <div class="col-md-8">
+                                <input name="COMMENTS1" class="form-control form-control-lg" style="height: 33px;"
+                                #COMMENTS1="ngModel" [(ngModel)]="service.tafettaFormData.COMMENTS1" required placeholder="Enter Comments">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-md-9" style="padding: 20px;border-radius: 2px;margin-bottom: 10px; box-shadow: 0px 0px 5px #ddd;">
+                    <div class="row" style="border-bottom: 1px solid;">
+                        <div class="col-md-3 expressLayout">
+                            <label>Express Name</label>
+                            <ng-select [items]="expressList"
+                                name="ExpressId"  
+                                #ExpressId="ngModel"
+                                bindLabel="ExpressName" 
+                                bindValue="Id" 
+                                placeholder="Select Express Name"
+                                [(ngModel)]="service.tafettaFormData.ExpressId">
+                            </ng-select>
+                        </div>
+                        <div class="col-md-2 expressLayout">
+                            <label>FOB SHANGHAI</label>
+                            <input name="FOBSHANGHAI1" class="form-control form-control-lg" style="height: 33px;"
+                            #FOBSHANGHAI1="ngModel" [(ngModel)]="service.tafettaFormData.FOBSHANGHAI1" required placeholder="Enter FOB Shanghai"> 
+                        </div>
+                        <div class="col-md-2 expressLayout">
+                            <label>CNF CTG</label>
+                            <input name="CNFCTG1" class="form-control form-control-lg" style="height: 33px;"
+                            #CNFCTG1="ngModel" onlyNumber [(ngModel)]="service.tafettaFormData.CNFCTG1" required placeholder="Enter CNF CTG">                           
+                        </div>
+
+                        <div class="col-md-3 expressLayout">
+                            <label>Ex Fty</label>
+                            <input name="ExFty" class="form-control form-control-lg" style="height: 33px;"
+                            #ExFty="ngModel" onlyNumber [(ngModel)]="service.tafettaFormData.ExFty" required placeholder="Enter Ex Fty">
+                        </div>
+                        <div class="form-group col-md-2">
+                            <div class="row" style="text-align: center; padding-right: 28px; padding-top: 28px; float: right;">
+                                <button class="btn btn-primary" type="button" (click)="AddData(service.tafettaFormData)">Add Express</button>
+                            </div>
+                        </div>
+                    </div>
+                    <table class="table table-bordered table-striped mt-2">
+                        <thead style="background-color: #3c8dbc; color: white;">
+                            <tr>
+                            <th scope="col">SL</th>
+                            <th scope="col">Express Id</th>
+                            <th scope="col">FOB SHANGHAI</th>
+                            <th scope="col">CNF CTG</th>
+                            <th scope="col">Ex Fty</th>
+                            <th>Action</th>
+                            </tr>
+                        </thead>
+                        <tbody *ngFor="let data of dataTable; let i=index" class="tbdy">
+                            <tr>
+                            <td scope="row">{{i+1}}</td>
+                            <!-- <th>{{data.ExpressId}}</th> -->
+                            <td>{{data.ExpressId}}</td>
+                            <td>{{data.FOBSHANGHAI1}}</td>
+                            <td>{{data.CNFCTG1}}</td>
+                            <td>{{data.ExFty}}</td>
+                            <td><button (click)="removeData(i)" class="btn btn-danger"><i class="fa fa-trash"></i></button></td>
+                            </tr>
+                        </tbody>
+                         <!-- Total -->
+                         <tr>
+                            <td scope="row"></td>
+                            <td></td>
+                            <td>Total: {{ totalFob }}</td>
+                            <td>Total: {{ totalCNFCTG }}</td>
+                            <td>Total:{{ totalExFty }}</td>
+                            <td style="text-align: right; display: block;"><button class="btn btn-primary" type="button" (click)="AddFabric(service.tafettaFormData)"><i class="fa fa-plus"></i>Add Fabric</button></td>
+                        </tr>
+                    </table>
+                </div>
+            </div>
+            <!-- SHOW -->
+            <div class="app-table-wrapper">
+                <mat-form-field style="display: flex; padding-left: 2px;">
+                <input matInput (keyup)="applyFilter($event.target.value)" autocomplete="off" placeholder="Search">
+                </mat-form-field>
+                <table mat-table [dataSource]="dataSource" matSort class="mat-elevation-z2">
+                
+                <ng-container matColumnDef="BuyerId">
+                    <th mat-header-cell *matHeaderCellDef mat-sort-header> Buyer Name </th>
+                    <td mat-cell *matCellDef="let data"> {{data.BuyerId}} </td>
+                </ng-container>
+
+                <ng-container matColumnDef="FabricId">
+                    <th mat-header-cell *matHeaderCellDef mat-sort-header> Fabric Name </th>
+                    <td mat-cell *matCellDef="let data"> {{data.FabricId}} </td>
+                </ng-container>
+
+                <ng-container matColumnDef="ColorId">
+                    <th mat-header-cell *matHeaderCellDef mat-sort-header> Color Name </th>
+                    <td mat-cell *matCellDef="let data"> {{data.ColorId}} </td>
+                </ng-container>
+
+                <ng-container matColumnDef="FinishType">
+                    <th mat-header-cell *matHeaderCellDef mat-sort-header> Finish Type </th>
+                    <td mat-cell *matCellDef="let data"> {{data.FinishType}} </td>
+                </ng-container>
+
+                <ng-container matColumnDef="CuttableId">
+                    <th mat-header-cell *matHeaderCellDef mat-sort-header> Cuttable </th>
+                    <td mat-cell *matCellDef="let data"> {{data.CuttableId}} </td>
+                </ng-container>
+
+                <ng-container matColumnDef="GSMId">
+                    <th mat-header-cell *matHeaderCellDef mat-sort-header> GSM </th>
+                    <td mat-cell *matCellDef="let data"> {{data.GSMId}} </td>
+                </ng-container>
+
+                <ng-container matColumnDef="CurrentPrice">
+                    <th mat-header-cell *matHeaderCellDef mat-sort-header> Current Price </th>
+                    <td mat-cell *matCellDef="let data"> {{data.CurrentPrice}} </td>
+                </ng-container>
+
+                <ng-container matColumnDef="TermOfPrice">
+                    <th mat-header-cell *matHeaderCellDef mat-sort-header> Term of Price </th>
+                    <td mat-cell *matCellDef="let data"> {{data.TermOfPrice}} </td>
+                </ng-container>
+
+                <ng-container matColumnDef="SupplierId">
+                    <th mat-header-cell *matHeaderCellDef mat-sort-header> Supplier </th>
+                    <td mat-cell *matCellDef="let data"> {{data.SupplierId}} </td>
+                </ng-container>
+
+                <ng-container matColumnDef="SupplierOriginId">
+                    <th mat-header-cell *matHeaderCellDef mat-sort-header> Supplier Origin </th>
+                    <td mat-cell *matCellDef="let data"> {{data.SupplierOriginId}} </td>
+                </ng-container>
+
+                <ng-container matColumnDef="YearlyConsumeInYds">
+                    <th mat-header-cell *matHeaderCellDef mat-sort-header> Yearly Consume in Yds </th>
+                    <td mat-cell *matCellDef="let data"> {{data.YearlyConsumeInYds}} </td>
+                </ng-container>
+
+                <ng-container matColumnDef="PriceInAverage">
+                    <th mat-header-cell *matHeaderCellDef mat-sort-header> Price in Average </th>
+                    <td mat-cell *matCellDef="let data"> {{data.PriceInAverage}} </td>
+                </ng-container>
+
+                <ng-container matColumnDef="BDRepresentativeContact">
+                    <th mat-header-cell *matHeaderCellDef mat-sort-header> BD Representative Contact </th>
+                    <td mat-cell *matCellDef="let data"> {{data.BDRepresentativeContact}} </td>
+                </ng-container>
+
+                <ng-container matColumnDef="SupplierType">
+                    <th mat-header-cell *matHeaderCellDef mat-sort-header> Supplier Type </th>
+                    <td mat-cell *matCellDef="let data"> {{data.SupplierType}} </td>
+                </ng-container>
+
+                <ng-container matColumnDef="Remarks">
+                    <th mat-header-cell *matHeaderCellDef mat-sort-header> Remarks </th>
+                    <td mat-cell *matCellDef="let data"> {{data.Remarks}} </td>
+                </ng-container>
+
+                <ng-container matColumnDef="RemarksGSM">
+                    <th mat-header-cell *matHeaderCellDef mat-sort-header> RemarksGSM </th>
+                    <td mat-cell *matCellDef="let data"> {{data.RemarksGSM}} </td>
+                </ng-container>
+
+                <ng-container matColumnDef="COMMENTS1">
+                    <th mat-header-cell *matHeaderCellDef mat-sort-header> Comments </th>
+                    <td mat-cell *matCellDef="let data"> {{data.COMMENTS1}} </td>
+                </ng-container>
+
+                <!-- ExpressDetails -->
+                <ng-container matColumnDef="ExpressDetails">
+                    <th mat-header-cell *matHeaderCellDef mat-sort-header> Express Details </th>
+                    <td mat-cell *matCellDef="let data">
+                        <table class="table table-bordered table-striped ml-2 mt-3">
+                            <thead style="background-color: #3c8dbc; color: white;">
+                                <tr>
+                                    <th scope="col">SL</th>
+                                    <th scope="col">Express Id</th>
+                                    <th scope="col">FOB SHANGHAI</th>
+                                    <th scope="col">CNF CTG</th>
+                                    <th scope="col">Ex Fty</th>
+                                </tr>
+                            </thead>
+                            <tbody  *ngFor="let list of data.ExpressList; let i=index">
+                                <tr>
+                                    <td scope="row">{{i+1}}</td>
+                                    <td>{{ list.ExpressId }}</td>
+                                    <td>{{ list.FOBSHANGHAI1 }}</td>
+                                    <td>{{ list.CNFCTG1 }}</td>
+                                    <td>{{ list.ExFty }}</td>
+                                    </tr>
+                            </tbody>
+                        </table> 
+                    </td>
+                </ng-container>
+                <tr mat-header-row *matHeaderRowDef="displayedColumns; sticky: true"></tr>
+                <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+                </table>
+                <mat-paginator [pageSizeOptions]="[5, 10, 20]" showFirstLastButtons></mat-paginator>
+            </div>
+            <div style="text-align: right;">
+                <button class="btn btn-primary mt-2" type="submit" (click)="onSubmit()" style="width: 150px;">Save</button>
+            </div>
+        </mat-card-content>
+    </mat-card>
+</form>

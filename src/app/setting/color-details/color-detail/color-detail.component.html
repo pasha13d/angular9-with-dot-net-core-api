@@ -1,0 +1,20 @@
+<form  #form="ngForm" autocomplete="off" (submit)="onSubmit(form)" class="form-center">
+    <mat-card class="example-card">
+        <mat-card-content>
+            <input type="hidden" name="Id" [value]="service.colorFormData.Id">
+            <div class="form-group">
+                <mat-form-field class="col-md-12">
+                    <mat-label>Color Name</mat-label>
+                    <input matInput name="ColorName" class="form-control form-control-lg"
+                    #ColorName="ngModel" [(ngModel)]="service.colorFormData.ColorName" required>
+                    <mat-error *ngIf="ColorName.invalid">Color Name is required</mat-error>
+                </mat-form-field>
+            </div>
+            <div class="form-group col-md-12">
+                <div class="row" style="text-align: center; padding-left: 12px;">
+                    <button mat-raised-button class="btn btn-info btn-lg" [disabled]="form.invalid" type="submit">SUBMIT</button>
+                </div>
+            </div>
+        </mat-card-content>
+    </mat-card>
+</form>

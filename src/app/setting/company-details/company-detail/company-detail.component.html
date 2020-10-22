@@ -1,0 +1,36 @@
+<form  #form="ngForm" autocomplete="off" class="form-center" (submit)="onSubmit(form)">
+    <mat-card class="example-card">
+        <!-- <mat-card-title>Shipping</mat-card-title> -->
+        <mat-card-content>
+            <input type="hidden" name="Id" [value]="service.companyFormData.Id">
+            <div class="form-group">
+                <mat-form-field class="col-md-12">
+                    <mat-label>Company Code</mat-label>
+                    <input matInput name="CompanyCode" class="form-control form-control-lg"
+                    #CompanyCode="ngModel" [(ngModel)]="service.companyFormData.CompanyCode" required>
+                    <mat-error *ngIf="CompanyCode.invalid">Company Code is required</mat-error>
+                </mat-form-field>
+            </div>
+            <div class="form-group">
+                <mat-form-field class="col-md-12">
+                    <mat-label>Company Name</mat-label>
+                    <input matInput name="CompanyName" class="form-control form-control-lg"
+                    #CompanyName="ngModel" [(ngModel)]="service.companyFormData.CompanyName" required>
+                    <mat-error *ngIf="CompanyName.invalid">Company Name is required</mat-error>
+                </mat-form-field>
+            </div>
+            <div class="form-group">
+                <mat-form-field class="col-md-12">
+                    <mat-label>Company Address</mat-label>
+                    <input matInput name="CompanyAddress" class="form-control form-control-lg"
+                    #CompanyAddress="ngModel" [(ngModel)]="service.companyFormData.CompanyAddress">
+                </mat-form-field>
+            </div>
+            <div class="form-group col-md-12">
+                <div class="row" style="text-align: center; padding-left: 12px;">
+                    <button mat-raised-button class="btn btn-info btn-lg" [disabled]="form.invalid" type="submit">SUBMIT</button>
+                </div>
+            </div>
+        </mat-card-content>
+    </mat-card>
+</form>

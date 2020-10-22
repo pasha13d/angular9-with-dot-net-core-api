@@ -1,0 +1,51 @@
+<form  #form="ngForm" autocomplete="off" class="form-center" (submit)="onSubmit(form)">
+    <mat-card class="example-card">
+        <!-- <mat-card-title>Supplier Form</mat-card-title> -->
+        <mat-card-content>
+            <input type="hidden" name="Id" [value]="service.supplierFormData.Id">
+            <div class="form-group">
+                <mat-form-field class="col-md-12">
+                    <mat-label>Supplier Name</mat-label>
+                    <input matInput name="SupplierName" #SupplierName="ngModel" [(ngModel)]="service.supplierFormData.SupplierName"
+                    [errorStateMatcher]="matcher" class="form-control form-control-lg" required>
+                    <mat-error *ngIf="SupplierName.invalid">Supply Name is required</mat-error>
+                </mat-form-field>
+            </div>
+            <div class="form-group">
+                <mat-form-field class="col-md-6">
+                    <mat-label>Origin</mat-label>
+                    <input matInput name="Origin" #Origin="ngModel" [(ngModel)]="service.supplierFormData.Origin"
+                    [errorStateMatcher]="matcher" class="form-control form-control-lg">
+                    <!-- <mat-error *ngIf="Origin.invalid">Origin is required</mat-error> -->
+                </mat-form-field>
+                <mat-form-field class="col-md-6">
+                    <mat-label>Address</mat-label>
+                    <textarea matInput name="Address" #Address="ngModel" [(ngModel)]="service.supplierFormData.Address"
+                     class="form-control form-control-lg"></textarea>
+                </mat-form-field>
+            </div>
+            <div class="form-group">
+                <mat-form-field class="col-md-6">
+                    <mat-label>Official Contact</mat-label>
+                    <input matInput name="Contact" #Contact="ngModel" [(ngModel)]="service.supplierFormData.Contact"
+                     class="form-control form-control-lg">
+                </mat-form-field>
+                <mat-form-field class="col-md-6">
+                    <mat-label>Official Email</mat-label>
+                    <input matInput name="Email" #Email="ngModel" [(ngModel)]="service.supplierFormData.Email"
+                     class="form-control form-control-lg">
+                </mat-form-field>
+            </div>
+            <div class="form-group col-md-12">
+                <div class="row" style="text-align: center; padding-left: 12px;">
+                    <!-- <div class="col-md-4"></div>
+                    <div class="col-md-4 text-center"> -->
+                        <button mat-raised-button class="btn btn-info btn-lg" [disabled]="form.invalid" type="submit">SUBMIT</button>
+                    <!-- </div>
+                    <div class="col-md-4"></div> -->
+                </div>
+                <!-- <button mat-raised-button class="btn btn-danger btn-lg" style="padding-right: 10px;" (click)="clear()">Reset</button> -->
+            </div>
+        </mat-card-content>
+    </mat-card>
+</form>

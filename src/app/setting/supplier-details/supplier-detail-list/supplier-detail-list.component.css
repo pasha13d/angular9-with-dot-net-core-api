@@ -1,0 +1,23 @@
+table {
+    width: 100%;
+    text-align: center !important;
+  }
+  .mat-header-cell {
+    /* text-align: center; */
+    background-color: cadetblue;
+    color: white;
+    font-size: medium;
+    padding-left: 15px;
+    width: 20% !important;
+  }
+  .mat-row:hover {
+    background-color: #efefef;
+  }
+  .mat-cell {
+      text-align: left;
+      padding-left: 10px;
+      border-bottom: 1px solid #00c0ef;
+      border-top: 1px solid #00c0ef;
+      border-left:  1px solid #00c0ef;
+      border-right:  1px solid #00c0ef;
+   }

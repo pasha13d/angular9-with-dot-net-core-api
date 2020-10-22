@@ -1,0 +1,20 @@
+.example-card {
+    padding-top: 250px;
+    width: 25px;
+}
+.p {
+    background-color: #00ACD6;
+    padding-top: 0;
+}
+.mat-tab-label, .mat-tab-link {
+    color: white;
+}
+
+.mat-card {
+     margin: 2px;
+      padding: 7px 1px 1px 1px;
+      background-color: #00c0ef;
+      text-align: center;
+      color: white;
+    }
+

@@ -1,0 +1,34 @@
+<div>
+    <mat-form-field>
+      <input matInput (keyup)="applyFilter($event.target.value)" autocomplete="off" placeholder="Search">
+    </mat-form-field>
+    <table mat-table [dataSource]="dataSource" matSort class="mat-elevation-z2">
+       
+      <ng-container matColumnDef="CountryCode">
+        <th mat-header-cell *matHeaderCellDef mat-sort-header> Country Code </th>
+        <td mat-cell *matCellDef="let country" (click)="populateForm(country)"> {{country.CountryCode}} </td>
+      </ng-container>
+
+      <ng-container matColumnDef="CountryName">
+        <th mat-header-cell *matHeaderCellDef mat-sort-header> Country Name </th>
+        <td mat-cell *matCellDef="let country" (click)="populateForm(country)"> {{country.CountryName}} </td>
+      </ng-container>
+  
+      <ng-container matColumnDef="deleteFabric">
+        <th mat-header-cell *matHeaderCellDef>Action</th>
+        <td mat-cell *matCellDef="let country">
+          <button mat-icon-button aria-label="Edit" (click)="populateForm(country)">
+            <mat-icon>edit</mat-icon>
+          </button>
+          <button mat-icon-button class="text-danger" (click)="onDelete(country.Id)">
+            <mat-icon>delete</mat-icon>
+          </button>
+        </td>
+      </ng-container>
+    <!-- <td class="fa fa-trash fa-lg text-danger" style="padding-top: 16px;" (click)="onDelete(pd.PMId)"></td>-->
+      <tr mat-header-row *matHeaderRowDef="displayedColumns; sticky: true"></tr>
+      <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+    </table>
+    <mat-paginator [pageSizeOptions]="[5, 10, 20]" showFirstLastButtons></mat-paginator>
+  </div>
+

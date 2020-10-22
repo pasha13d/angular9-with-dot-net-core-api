@@ -1,0 +1,21 @@
+<form  #form="ngForm" autocomplete="off" class="form-center" (submit)="onSubmit(form)">
+    <mat-card class="example-card">
+        <mat-card-content>
+            <input type="hidden" name="Id" [value]="service.cuttableFormData.Id">
+            <div class="form-group">
+                <mat-form-field class="col-md-12">
+                    <mat-label>Cuttable Width</mat-label>
+                    <input matInput name="CuttableWidth" class="form-control form-control-lg"
+                    #CuttableWidth="ngModel" [(ngModel)]="service.cuttableFormData.CuttableWidth" required>
+                    <mat-error *ngIf="CuttableWidth.invalid">Cuttable Width is required</mat-error>
+                </mat-form-field>
+            </div>
+            <div class="form-group col-md-12">
+                <div class="row" style="text-align: center; padding-left: 12px;">
+                    <button mat-raised-button class="btn btn-info btn-lg" [disabled]="form.invalid" type="submit">SUBMIT</button>
+                </div>
+            </div>
+        </mat-card-content>
+    </mat-card>
+</form>
+

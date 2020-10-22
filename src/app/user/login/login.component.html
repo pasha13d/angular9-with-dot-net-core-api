@@ -1,0 +1,27 @@
+<form  #form="ngForm" autocomplete="off" (submit)="onSubmit(form)">
+    <mat-card class="">
+        <!-- <mat-card-title>Zipper</mat-card-title> -->
+        <mat-card-content>
+            <!-- <input type="hidden" name="Id" [value]="service.formData.Id"> -->
+            <div class="form-group">
+                <mat-form-field class="col-md-12">
+                    <mat-label>User Name</mat-label>
+                    <input matInput name="UserName" class="form-control form-control-lg"
+                    #UserName="ngModel" [(ngModel)]="service.formData.UserName" required>
+                    <!-- <mat-icon matSuffix size="3">person</mat-icon> -->
+                    <mat-error *ngIf="UserName.invalid">User Name is required</mat-error>
+                </mat-form-field>
+            </div>
+            <div class="form-group">
+                <mat-form-field class="col-md-12">
+                    <mat-label>Password</mat-label>
+                    <input matInput name="Password" type="password" class="form-control form-control-lg"
+                    #Password="ngModel" [(ngModel)]="service.formData.Password" required>
+                    <mat-error *ngIf="Password.invalid">Password is required</mat-error>
+                </mat-form-field>
+            </div>
+            <button mat-raised-button class="btn btn-info btn-lg btn-block" [disabled]="form.invalid" type="submit">Login</button>
+                <!-- <a>{{this.router.data.title}}</a>     -->
+        </mat-card-content>
+    </mat-card>
+</form>

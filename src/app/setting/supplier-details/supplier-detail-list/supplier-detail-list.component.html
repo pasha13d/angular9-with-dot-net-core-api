@@ -1,0 +1,53 @@
+<div>
+  <mat-form-field>
+    <input matInput (keyup)="applyFilter($event.target.value)" autocomplete="off" placeholder="Filter">
+  </mat-form-field>
+
+  <table mat-table [dataSource]="dataSource" class="mat-elevation-z2">
+      <!-- Name Column -->
+    <ng-container matColumnDef="SupplierName">
+      <th mat-header-cell *matHeaderCellDef> Name </th>
+      <td mat-cell *matCellDef="let supplier"> {{supplier.SupplierName}} </td>
+    </ng-container>
+
+    <!-- Origin Column -->
+    <ng-container matColumnDef="Origin">
+      <th mat-header-cell *matHeaderCellDef> Origin </th>
+      <td mat-cell *matCellDef="let supplier"> {{supplier.Origin}} </td>
+    </ng-container>
+
+    <!-- Address Column -->
+    <ng-container matColumnDef="Address">
+      <th mat-header-cell *matHeaderCellDef> Address </th>
+      <td mat-cell *matCellDef="let supplier"> {{supplier.Address}} </td>
+    </ng-container>
+
+    <!-- Contact Column -->
+    <ng-container matColumnDef="Contact">
+      <th mat-header-cell *matHeaderCellDef> Contact </th>
+      <td mat-cell *matCellDef="let supplier"> {{supplier.Contact}} </td>
+    </ng-container>
+
+    <!-- Email Column -->
+    <ng-container matColumnDef="Email">
+      <th mat-header-cell *matHeaderCellDef> Email </th>
+      <td mat-cell *matCellDef="let supplier"> {{supplier.Email}} </td>
+    </ng-container>
+
+    <ng-container matColumnDef="deleteFabric">
+      <th mat-header-cell *matHeaderCellDef>Action</th>
+      <td mat-cell *matCellDef="let supplier">
+        <button mat-icon-button aria-label="Edit" (click)="populateForm(supplier)">
+          <mat-icon>edit</mat-icon>
+        </button>
+        <button mat-icon-button class="text-danger" (click)="onDelete(supplier.Id)">
+          <mat-icon>delete</mat-icon>
+        </button>
+      </td>
+    </ng-container>
+
+    <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+    <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+  </table>
+  <mat-paginator [pageSizeOptions]="[5, 10, 20]" showFirstLastButtons></mat-paginator>
+</div>

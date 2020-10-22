@@ -1,0 +1,287 @@
+<!-- <form  #form="ngForm" autocomplete="off" class="form-center" (submit)="onSubmit(form)">
+  <mat-card class="example-card">
+      <mat-card-content>
+          <input type="hidden" name="Id" [value]="service.tafettaFormData.Id">
+              <div class="form-group">
+                  <mat-form-field class="col-md-2">
+                      <mat-label>Buyer Name</mat-label>
+                      <mat-select name="BuyerId"  #BuyerId="ngModel" [(ngModel)]="service.tafettaFormData.BuyerId">
+                          <mat-option>Select Buyer</mat-option>
+                          <mat-option  [value]="buyer.Id" *ngFor="let buyer of buyerList">{{ buyer.BuyerName }}</mat-option>
+                      </mat-select>
+                  </mat-form-field>
+
+                  <mat-form-field class="col-md-2">
+                      <mat-label>Fabric Type</mat-label>
+                      <mat-select name="FabricId"  #FabricId="ngModel" [(ngModel)]="service.tafettaFormData.FabricId">
+                          <mat-option>Select Fabric Type</mat-option>
+                          <mat-option  [value]="fabric.Id" *ngFor="let fabric of fabricList">{{ fabric.FabricType }}</mat-option>
+                      </mat-select>
+                  </mat-form-field>
+
+                  <mat-form-field class="col-md-2">
+                      <mat-label>Color</mat-label>
+                      <mat-select name="ColorId"  #ColorId="ngModel" [(ngModel)]="service.tafettaFormData.ColorId">
+                          <mat-option>Select Color</mat-option>
+                          <mat-option  [value]="color.Id" *ngFor="let color of colorList">{{ color.ColorName }}</mat-option>
+                      </mat-select>
+                  </mat-form-field>
+
+                  <mat-form-field class="col-md-2">
+                      <mat-label>Finish Type</mat-label>
+                      <input matInput name="FinishType" class="form-control form-control-lg"
+                      #FinishType="ngModel" [(ngModel)]="service.tafettaFormData.FinishType">
+                  </mat-form-field>
+
+                  <mat-form-field class="col-md-2">
+                      <mat-label>Cuttable Width</mat-label>
+                      <mat-select name="CuttableId"  #CuttableId="ngModel" [(ngModel)]="service.tafettaFormData.CuttableId">
+                          <mat-option>Select Cuttable Width</mat-option>
+                          <mat-option  [value]="cuttable.Id" *ngFor="let cuttable of cuttableList">{{ cuttable.CuttableWidth }}</mat-option>
+                      </mat-select>
+                  </mat-form-field>
+                  
+                  <mat-form-field class="col-md-2">
+                      <mat-label>GSM</mat-label>
+                      <mat-select name="GSMId"  #GSMId="ngModel" [(ngModel)]="service.tafettaFormData.GSMId">
+                          <mat-option>Select GSM</mat-option>
+                          <mat-option  [value]="gsms.Id" *ngFor="let gsms of gsmList">{{ gsms.GSMValue }}</mat-option>
+                      </mat-select>
+                  </mat-form-field>
+              </div>
+
+              <div class="form-group">
+                  <mat-form-field class="col-md-2">
+                      <mat-label>Current Price</mat-label>
+                      <input matInput name="CurrentPrice" class="form-control form-control-lg"
+                          #CurrentPrice="ngModel" [(ngModel)]="service.tafettaFormData.CurrentPrice">
+                  </mat-form-field>
+
+                  <mat-form-field class="col-md-2">
+                      <mat-label>Term of Price</mat-label>
+                      <input matInput name="TermOfPrice" class="form-control form-control-lg"
+                          #TermOfPrice="ngModel" [(ngModel)]="service.tafettaFormData.TermOfPrice">
+                  </mat-form-field>
+
+                  <mat-form-field class="col-md-2">
+                      <mat-label>FOB SHANGHAI</mat-label>
+                      <input matInput name="FOBSHANGHAI1" class="form-control form-control-lg"
+                          #FOBSHANGHAI1="ngModel" [(ngModel)]="service.tafettaFormData.FOBSHANGHAI1">
+                  </mat-form-field>
+
+                  <mat-form-field class="col-md-2">
+                      <mat-label>CNF CTG</mat-label>
+                      <input matInput name="CNFCTG1" class="form-control form-control-lg"
+                          #CNFCTG1="ngModel" [(ngModel)]="service.tafettaFormData.CNFCTG1">
+                  </mat-form-field>
+
+                  <mat-form-field class="col-md-2">
+                      <mat-label>FOB SHANGHAI</mat-label>
+                      <input matInput name="FOBSHANGHAI2" class="form-control form-control-lg"
+                          #FOBSHANGHAI2="ngModel" [(ngModel)]="service.tafettaFormData.FOBSHANGHAI2">
+                  </mat-form-field>
+
+                  <mat-form-field class="col-md-2">
+                      <mat-label>CNF CTG</mat-label>
+                      <input matInput name="CNFCTG2" class="form-control form-control-lg"
+                      #CNFCTG2="ngModel" [(ngModel)]="service.tafettaFormData.CNFCTG2">
+                  </mat-form-field>
+              </div>
+
+              <div class="form-group">
+                  <mat-form-field class="col-md-2">
+                      <mat-label>CNF CTG</mat-label>
+                      <input matInput name="CNFCTG3" class="form-control form-control-lg"
+                      #CNFCTG3="ngModel" [(ngModel)]="service.tafettaFormData.CNFCTG3">
+                  </mat-form-field>
+
+                  <mat-form-field class="col-md-2">
+                      <mat-label>CNF CTG</mat-label>
+                      <input matInput name="CNFCTG4" class="form-control form-control-lg"
+                      #CNFCTG4="ngModel" [(ngModel)]="service.tafettaFormData.CNFCTG4">
+                  </mat-form-field>
+
+                  <mat-form-field class="col-md-2">
+                      <mat-label>Remarks (GSM)</mat-label>
+                      <input matInput name="RemarksGSM" class="form-control form-control-lg"
+                      #RemarksGSM="ngModel" [(ngModel)]="service.tafettaFormData.RemarksGSM">
+                  </mat-form-field>
+
+                  <mat-form-field class="col-md-2">
+                      <mat-label>Ex Fty</mat-label>
+                      <input matInput name="ExFty" class="form-control form-control-lg"
+                      #ExFty="ngModel" [(ngModel)]="service.tafettaFormData.ExFty">
+                  </mat-form-field>
+
+                  <mat-form-field class="col-md-2">
+                      <mat-label>CNF CTG</mat-label>
+                      <input matInput name="CNFCTG5" class="form-control form-control-lg"
+                      #CNFCTG5="ngModel" [(ngModel)]="service.tafettaFormData.CNFCTG5">
+                  </mat-form-field>
+
+                  <mat-form-field class="col-md-2">
+                      <mat-label>COMMENTS</mat-label>
+                      <input matInput name="COMMENTS1" class="form-control form-control-lg"
+                      #COMMENTS1="ngModel" [(ngModel)]="service.tafettaFormData.COMMENTS1">
+                  </mat-form-field>
+              </div>
+
+              <div class="form-group">
+                  <mat-form-field class="col-md-2">
+                      <mat-label>CNF CTG</mat-label>
+                      <input matInput name="CNFCTG6" class="form-control form-control-lg"
+                      #CNFCTG6="ngModel" [(ngModel)]="service.tafettaFormData.CNFCTG6">
+                  </mat-form-field>
+
+                  <mat-form-field class="col-md-2">
+                      <mat-label>CNF CTG</mat-label>
+                      <input matInput name="CNFCTG7" class="form-control form-control-lg"
+                      #CNFCTG7="ngModel" [(ngModel)]="service.tafettaFormData.CNFCTG7">
+                  </mat-form-field>
+
+                  <mat-form-field class="col-md-2">
+                      <mat-label>COMMENTS</mat-label>
+                      <input matInput name="COMMENTS2" class="form-control form-control-lg"
+                      #COMMENTS2="ngModel" [(ngModel)]="service.tafettaFormData.COMMENTS2">
+                  </mat-form-field>
+
+                  <mat-form-field class="col-md-2">
+                      <mat-label>CNF CTG</mat-label>
+                      <input matInput name="CNFCTG8" class="form-control form-control-lg"
+                      #CNFCTG8="ngModel" [(ngModel)]="service.tafettaFormData.CNFCTG8">
+                  </mat-form-field>
+
+                  <mat-form-field class="col-md-2">
+                      <mat-label>CNF CTG</mat-label>
+                      <input matInput name="CNFCTG9" class="form-control form-control-lg"
+                      #CNFCTG9="ngModel" [(ngModel)]="service.tafettaFormData.CNFCTG9">
+                  </mat-form-field>
+
+                  <mat-form-field class="col-md-2">
+                      <mat-label>FOB</mat-label>
+                      <input matInput name="FOB" class="form-control form-control-lg"
+                      #FOB="ngModel" [(ngModel)]="service.tafettaFormData.FOB">
+                  </mat-form-field>
+              </div>
+
+              <div class="form-group">
+                  <mat-form-field class="col-md-2">
+                      <mat-label>CNF CTG</mat-label>
+                      <input matInput name="CNFCTG10" class="form-control form-control-lg"
+                      #CNFCTG10="ngModel" [(ngModel)]="service.tafettaFormData.CNFCTG10">
+                  </mat-form-field>
+
+                  <mat-form-field class="col-md-2">
+                      <mat-label>CNF CTG</mat-label>
+                      <input matInput name="CNFCTG11" class="form-control form-control-lg"
+                      #CNFCTG11="ngModel" [(ngModel)]="service.tafettaFormData.CNFCTG11">
+                  </mat-form-field>
+
+                  <mat-form-field class="col-md-2">
+                      <mat-label>Current Supplier</mat-label>
+                      <mat-select name="SupplierId"  #SupplierId="ngModel" [(ngModel)]="service.tafettaFormData.SupplierId">
+                          <mat-option>Select GSM</mat-option>
+                          <mat-option  [value]="supplier.Id" *ngFor="let supplier of supplierList">{{ supplier.SupplierName }}</mat-option>
+                      </mat-select>
+                  </mat-form-field>
+
+                  <mat-form-field class="col-md-2">
+                      <mat-label>Supplier Origin</mat-label>
+                      <mat-select name="SupplierOriginId"  #SupplierOriginId="ngModel" [(ngModel)]="service.tafettaFormData.SupplierOriginId">
+                          <mat-option>Select GSM</mat-option>
+                          <mat-option  [value]="supplier.Id" *ngFor="let supplier of supplierList">{{ supplier.Origin }}</mat-option>
+                      </mat-select>
+                  </mat-form-field>
+
+                  <mat-form-field class="col-md-2">
+                      <mat-label>Yearly Consume in yds</mat-label>
+                      <input matInput name="YearlyConsumeInYds" class="form-control form-control-lg"
+                      #YearlyConsumeInYds="ngModel" [(ngModel)]="service.tafettaFormData.YearlyConsumeInYds">
+                  </mat-form-field>
+
+                  <mat-form-field class="col-md-2">
+                      <mat-label>Price in Average</mat-label>
+                      <input matInput name="PriceInAverage" class="form-control form-control-lg"
+                      #PriceInAverage="ngModel" [(ngModel)]="service.tafettaFormData.PriceInAverage">
+                  </mat-form-field>
+              </div>
+
+              <div class="form-group">
+                  <mat-form-field class="col-md-2">
+                      <mat-label>BD Representative Contact</mat-label>
+                      <input matInput name="BDRepresentativeContact" class="form-control form-control-lg"
+                      #BDRepresentativeContact="ngModel" [(ngModel)]="service.tafettaFormData.BDRepresentativeContact">
+                  </mat-form-field>
+
+                  <mat-form-field class="col-md-2">
+                      <mat-label>Supplier Type</mat-label>
+                      <input matInput name="SupplierType" class="form-control form-control-lg"
+                      #SupplierType="ngModel" [(ngModel)]="service.tafettaFormData.SupplierType">
+                  </mat-form-field>
+
+                  <mat-form-field class="col-md-2">
+                      <mat-label>Remarks</mat-label>
+                      <input matInput name="Remarks" class="form-control form-control-lg"
+                      #Remarks="ngModel" [(ngModel)]="service.tafettaFormData.Remarks">
+                  </mat-form-field>
+              </div>
+
+             
+          <div class="form-group col-md-12">
+              <div class="row" style="text-align: center; padding-left: 12px;">
+                  <button mat-raised-button class="btn btn-primary btn-lg" type="submit">Filter</button>
+              </div>
+          </div>
+      </mat-card-content>
+  </mat-card>
+</form>
+
+
+
+<div style="padding-left: 10px; padding-right: 10px;">
+    <mat-form-field>
+      <input matInput  autocomplete="off" (keyup)="applyFilter($event.target.value)" placeholder="Search">
+    </mat-form-field>
+    <table mat-table [dataSource]="dataSource" matSort class="mat-elevation-z2">
+       
+      <ng-container matColumnDef="BuyerName">
+        <th mat-header-cell *matHeaderCellDef mat-sort-header> Buyer Name </th>
+        <td mat-cell *matCellDef="let tafetta"  (click)="populateForm(tafetta)"> {{tafetta.BuyerName}} </td>
+      </ng-container>
+  
+      <ng-container matColumnDef="FabricType">
+        <th mat-header-cell *matHeaderCellDef> Fabric Type </th>
+        <td mat-cell *matCellDef="let tafetta"  (click)="populateForm(tafetta)"> {{tafetta.FabricType}} </td>
+      </ng-container>
+      
+      <ng-container matColumnDef="ColorName">
+        <th mat-header-cell *matHeaderCellDef> Color Name </th>
+        <td mat-cell *matCellDef="let tafetta"  (click)="populateForm(tafetta)"> {{tafetta.ColorName}} </td>
+      </ng-container>
+
+      <ng-container matColumnDef="FinishType">
+        <th mat-header-cell *matHeaderCellDef> Finish Type </th>
+        <td mat-cell *matCellDef="let tafetta"  (click)="populateForm(tafetta)"> {{tafetta.FinishType}} </td>
+      </ng-container>
+
+      <ng-container matColumnDef="CuttableWidth">
+        <th mat-header-cell *matHeaderCellDef> Cuttable Width </th>
+        <td mat-cell *matCellDef="let tafetta"  (click)="populateForm(tafetta)"> {{tafetta.CuttableWidth}} </td>
+      </ng-container>
+
+      <ng-container matColumnDef="GSMValue">
+        <th mat-header-cell *matHeaderCellDef> GSM </th>
+        <td mat-cell *matCellDef="let tafetta"  (click)="populateForm(tafetta)"> {{tafetta.GSMValue}} </td>
+      </ng-container>
+
+      <ng-container matColumnDef="CurrentPrice">
+        <th mat-header-cell *matHeaderCellDef> Current Price </th>
+        <td mat-cell *matCellDef="let tafetta"  (click)="populateForm(tafetta)"> {{tafetta.CurrentPrice}} </td>
+      </ng-container>
+    
+      <tr mat-header-row *matHeaderRowDef="displayedColumns; sticky: true"></tr>
+      <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+    </table>
+    <mat-paginator [pageSizeOptions]="[5, 10, 20]" showFirstLastButtons></mat-paginator>
+  </div>
+ -->
